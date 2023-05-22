@@ -17,10 +17,9 @@
 }
 
 .gear-icon {
-    position: absolute;
-    right: 10px;
-    margin-top: 30px;
-    margin-right: 110px;
+    position: relative;
+    right: -15px;
+    bottom: -3px;
 }
 
 
@@ -63,3 +62,138 @@
     height: 2px;
     background-color: rgb(63, 169, 239);
   }
+
+.image {
+    width: 100%;
+    height: auto;
+    max-width: 360px;
+    
+}
+
+.image1{
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  margin-right: 70px;
+}
+
+.image-container {
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+    position: relative;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item .text-container {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.list-group-item .text-container p {
+  margin: 0;
+}
+
+.list-group-item .image-container {
+  float: right;
+  margin-left: 10px;
+}
+
+.list-group-item .black-text {
+  text-align: left;
+  
+}
+
+.text-container img {
+  margin-right: 30px;
+}
+.image-text {
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+    font-weight: bold;
+}
+
+
+.trends-list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 40px;
+  }
+
+
+.trend-text {
+    font-size: 15px;
+  }
+.my-class{
+  font-size: 12px;
+  font-weight: bold;
+}
+.grey-text {
+    color: #888;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: left;
+  }
+
+.grey-text5 {
+  color: rgb(140, 138, 138);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.black-text {
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.ellipsis1{
+    margin-left: 200px;
+}
+.ellipsis2{
+    margin-left: 178px;
+}
+.ellipsis3{
+    margin-left: 205px;
+}
+.ellipsis4{
+    margin-left: 260px;
+}
+.ellipsis5{
+    margin-left: 289px;
+}
+
+.custom-width {
+  width: 180px; 
+  height: 38px;
+}
+
+.btn{
+  margin-top: 10px;
+}
+
+.list-group{
+  margin-top: 10px;
+}
+.custom-width1{
+  width: 550px;
+}
+.rounded-pill{
+  margin-top: 10px;
+}
+.nav{
+  margin-top: 10px;
+}
+
+.list-group-item {
+  padding-left: 0;
+}

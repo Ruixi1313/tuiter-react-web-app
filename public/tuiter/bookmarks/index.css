@@ -1,0 +1,137 @@
+.fas fa-arrow-left{
+    color: rgb(111, 110, 110);
+}
+
+
+
+.bookmark-text {
+    right: 40px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+.text2{
+    color: #888;
+    margin-left: 146px;
+}
+
+.text3{
+    color: #888;
+    margin-left: 236px;
+}
+
+
+.ellipsis{
+    margin-left: 289px;
+}
+   
+.bookmark-icon {
+    vertical-align: middle;
+    margin-left: 15px;
+    margin-top: 30px;
+  }
+
+.user-name{
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.mark{
+    color:rgb(47, 144, 213)
+}
+
+.grey-text {
+    color: #888;
+    font-size: 13px;
+
+  }
+
+.grey-text1 {
+    color: #888;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+
+.black-text {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 65px;
+    }
+
+.black-text1 {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    }    
+
+
+    
+.styling-corners {
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 15px;
+border: 1px solid #ddd;
+box-sizing: border-box;
+flex-direction: column;
+}
+
+.top-half img {
+width: 400px;
+height: 200px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+
+}
+.styled-container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+.icon-container {
+    width: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-top: 5px;
+    color: #888;
+  }
+  
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.text{
+    margin-right: 30px;
+    margin-top: 10px;
+    font-size: 12px;
+
+}
+
+.text1{
+    margin-right: 40px;
+    font-size: 10px;
+}
+
+.text4{
+    color: rgb(213, 74, 155);
+    margin-right: 30px;
+    font-size: 10px;
+}
+
+.custom-color{
+    color: rgb(213, 74, 155);
+}
+
+

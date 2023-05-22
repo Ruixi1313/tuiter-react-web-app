@@ -1,56 +1,106 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="index.css"
-    rel="stylesheet"/>
- </head>
-<table>
-    <tr>
-        <td style="vertical-align: top">
-            <h2>Navigation</h2>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="explore.html">Explore(CSS)</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="bookmarks.html">Bookmarks</a></li>
-                <li><a href="lists.html">Lists</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="tuit.html">Tuit</a></li>
-                <li><a href="reply.html">Reply</a></li>
+  <head>
+      <link href="index.css"
+      rel="stylesheet"/>
+      <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+      
+  </head>
+  <body>
+    <div class="container-fluid">
+    <table>
+      <tr>
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <ul class="list-group">
+                <a class="list-group-item" href="home.html">Home</a>
+                <a  class="list-group-item" href="explore-css.html">Explore(CSS)</a>
+                <a class="list-group-item" href="notifications.html">Notifications</a>
+                <a class="list-group-item" href="messages.html">Messages</a>
+                <a class="list-group-item" href="bookmarks-css.html">Bookmarks</a>
+                <a class="list-group-item" href="lists.html">Lists</a>
+                <a class="list-group-item" href="profile.html">Profile</a>
+                <a class="list-group-item" href="tuit.html">Tuit</a>
+                <a class="list-group-item" href="reply.html">Reply</a>
             </ul>
-        </td>
-    </tr>
-</table>
-    <td style="vertical-align: top">
-    <body>
-        <div class="search-container">
-        <input type="text" class="search-input" placeholder="&#128269; Search Tuiter">
-        <span class = "gear-icon" style='font-size:30px;'>&#9881;</span>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          </td>
+          <td style="vertical-align: top">
+            <input type="text" class="search-input" placeholder="&#128269; Search Tuiter">
+            <span class = "gear-icon" style='font-size:26px;'>&#9881;</span>
+            <div class="tabs-container">
+              <ul class="tab-list">
+                <li class="tab-item">
+                  <a href="#" class="tab-link active">For You</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link">Trending</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link">News</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link">Sports</a>
+                </li>
+                <li class="tab-item">
+                  <a href="#" class="tab-link">Entertainment</a>
+                </li>
+              </ul>
+            </div>
+            <div class="image-container">
+                <img src="Lakers vs Nuggets.jpg" class="image">
+                <h2 class="image-text">Lakers at Nuggets</h2>
+            </div>
+            <div class="trending-page">
+              <ul class="trends-list">
+                <li class="trend-item">
+                  <div class="trend-text">
+                    <span class="grey-text">Food  Trending</span><br>
+                    <span class="black-text">DominosPizzaParty<span class="ellipsis1">...</span></span><br>
+                    <span class="grey-text">2800 Tweets</span>
+                  </div>
+                </li>
+                <li class="trend-item">
+                <div class="trend-text">
+                    <span class="grey-text">Trending</span><br>
+                    <span class="black-text">SamSummerDitchDays<span class="ellipsis2">...</span></span><br>
+                    <span class="grey-text">3100 Tweets</span>
+                </div>
+                </li>
+                <li class="trend-item">
+                <div class="trend-text">
+                    <span class="grey-text">Gaming trending</span><br>
+                    <span class="black-text">xboxfreecodefriday<span class="ellipsis3">...</span></span><br>
+                    <span class="grey-text">1586 Tweets</span>
+                </div>
+                </li>
+                <li class="trend-item">
+                <div class="trend-text">
+                    <span class="grey-text">Trending</span><br>
+                    <span class="black-text">Tim Keller<span class="ellipsis4">...</span></span><br>
+                    <span class="grey-text">9067 Tweets</span>
+                </div>
+                </li>
+                <li class="trend-item">
+                <div class="trend-text">
+                    <span class="grey-text">NHL Trending</span><br>
+                    <span class="black-text">Dubas<span class="ellipsis5">...</span></span><br>
+                    <span class="grey-text">8900 Tweets</span>
+                </div>
+                </li>
+              </ul>
+            </div>
+          </td>
         </div>
-    </body>
-
-    <body>
-        <div class="tabs-container">
-          <ul class="tab-list">
-            <li class="tab-item">
-              <a href="#" class="tab-link active">For You</a>
-            </li>
-            <li class="tab-item">
-              <a href="#" class="tab-link">Trending</a>
-            </li>
-            <li class="tab-item">
-              <a href="#" class="tab-link">News</a>
-            </li>
-            <li class="tab-item">
-              <a href="#" class="tab-link">Sports</a>
-            </li>
-            <li class="tab-item">
-              <a href="#" class="tab-link">Entertainment</a>
-            </li>
-          </ul>
-        </div>
-      </body>
-    
+      </tr>
+    </table>
+  </div>
+  </body>
 </html>
 
