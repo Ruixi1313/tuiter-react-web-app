@@ -1,38 +1,46 @@
 import React, {useState} from "react";
-import { AiOutlinePicture } from "react-icons/ai";
-import { AiOutlineFileGif } from "react-icons/ai";
-import { MdFormatListBulleted } from "react-icons/md";
-import { BsEmojiSmile } from "react-icons/bs";
-import { HiOutlineLocationMarker } from "react-icons/hi";
-import { BiBold, BiItalic } from "react-icons/bi";
-import { BiCalendarCheck } from "react-icons/bi";
-// import { createTuit } from "./reducer/tuits-reducer";
-import {useDispatch} from "react-redux";
+import { AiOutlinePicture } from 'react-icons/ai';
+import { MdGif } from 'react-icons/md';
+import { MdFormatListBulleted } from 'react-icons/md';
+import { BsEmojiSmile } from 'react-icons/bs';
+import { TbCalendarStats } from 'react-icons/tb';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { BiBold } from 'react-icons/bi';
+import { BiItalic } from 'react-icons/bi';
 import {createTuitThunk} from "./services/tuits-thunks";
+import {useDispatch} from "react-redux";
+
 const WhatsHappening = () => {
  let [whatsHappening, setWhatsHappening] = useState('');
  const dispatch = useDispatch();
  const tuitClickHandler = () => {
     const newTuit = {
+        id: new Date().getTime(), 
+        topic: "NASA",   
+        userName: "NASA",
+        title: whatsHappening,
+        time: "0h",   
+        image: "nasa.jpg",
+        liked: false,
+        disliked:false,
+        dislikes:0,
+        replies: 0,
+        retuits: 0,
+        likes: 0,
+        handle: "@nasa",
         tuit: whatsHappening
       }
-      newTuit.image="tesla.png";
-      newTuit.liked=false;
-      newTuit.likes=0;
-      newTuit.retuits=0;
-      newTuit.replies=0;
-      newTuit.handle="@tesla";
-      newTuit.dislike=0;
+     // const newWhatsHappening = [...whatsHappening,setWhatsHappening];
       dispatch(createTuitThunk(newTuit));
-      setWhatsHappening("");
+      setWhatsHappening(""); 
    console.log(whatsHappening);
  }
  return (
    <div className="row">
-     <div className="col-auto">
-       <img src={require(`./images/nasa.png`)} alt="nasa" width={60}/>
+     <div className="col-auto col-sm-2 col-md-2 col-lg-1 col-xl-2 col-xxl-2">
+       <img src="/images/nasa.jpg" width={80}/>
      </div>
-     <div className="col-10">
+     <div className="col-10 ms-auto">
        <textarea value={whatsHappening} placeholder="What's happening?"
                className="form-control border-0"
                onChange={(event) => setWhatsHappening(event.target.value)}>
@@ -43,14 +51,14 @@ const WhatsHappening = () => {
            Tuit
          </button>
          <div className="text-primary fs-2">
-           <AiOutlinePicture className="me-3"/>
-           <AiOutlineFileGif className="me-3"/>
-           <MdFormatListBulleted className="me-3"/>
-           <BsEmojiSmile className="me-3"/>
-           <BiCalendarCheck className="me-3"/>
-           <HiOutlineLocationMarker className="me-3"/>
-           <BiBold className="me-3"/>
-           <BiItalic className="me-3"/>
+            <AiOutlinePicture className="me-4" /> 
+            <MdGif className="me-4" /> 
+            <MdFormatListBulleted className="me-4" /> 
+            <BsEmojiSmile className="me-4" /> 
+            <TbCalendarStats className="me-4" /> 
+            <HiOutlineLocationMarker className="me-4" /> 
+            <BiBold className="me-4" /> 
+            <BiItalic className="me-4" /> 
          </div>
        </div>
      </div>
