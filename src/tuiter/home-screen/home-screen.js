@@ -1,5 +1,5 @@
-import TuitsList from "./tuits";
-import WhatsHappening from "./whats-happening";
+import TuitsList from "../tuits/index";
+import WhatsHappening from "../whats-happening";
 
 function HomeScreen() {
   return (
