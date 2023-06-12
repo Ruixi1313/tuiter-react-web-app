@@ -1,44 +1,54 @@
-import React, {useState} from 'react';
-import {FaRegComments} from 'react-icons/fa';
-import {BiRepost, BiUpload} from 'react-icons/bi';
-import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai';
+import React from "react";
+import {FaHeart, FaRegHeart, FaRetweet, FaUpload, FaRegComment} from "react-icons/fa";
+import {updateTuitThunk} from "../services/tuits-thunks";
+import {useDispatch} from "react-redux";
+import * as PropTypes from "prop-types";
+import {AiFillDislike, AiOutlineDislike} from "react-icons/ai";
 
-const TuitStats = ({replies, retuits, likes, liked}) => {
-  const [likedBool, setLiked] = useState(liked);
-  const [likesCount, setCount] = useState(likes);
+function BiSolidDislike(props) {
+    return null;
+}
 
-  const handleLike = () => {
-    if (likedBool) {
-      setLiked(false);
-      setCount(likesCount - 1);
-    } else {
-      setLiked(true);
-      setCount(likesCount + 1);
-    }
-  };
-
-  return (
-      <div className="row">
-        <div className="col-3">
-          <FaRegComments size={20} color="grey"/>
-          <text className="ms-2">{replies}</text>
-        </div>
-        <div className="col-3">
-          <BiRepost size={20} color="grey"/>
-          <text className="ms-2">{retuits}</text>
-        </div>
-        <div className="col-3">
-          <button className="button-none" onClick={handleLike}>
-            {likedBool ? <AiFillHeart size={20} color="red"/> : <AiOutlineHeart
-                size={20} color="grey"/>}
-          </button>
-          <text className="ms-2">{likesCount}</text>
-        </div>
-        <div className="col-3">
-          <BiUpload size={20} color="grey"/>
-        </div>
-      </div>
-  );
+BiSolidDislike.propTypes = {
+    onClick: PropTypes.func,
+    className: PropTypes.string
 };
+const TuitStats = ({tuit}) => {
+    const dispatch = useDispatch();
 
+
+    return (
+        <div className="row">
+            <div className="col-2">
+                <div><FaRegComment/> {tuit.replies}</div>
+            </div>
+            <div className="col-2">
+                <div><FaRetweet/> {tuit.retuits}</div>
+            </div>
+            <div className="col-3">
+                {/*Todo: Try to make this block prettier*/}
+                <div>
+                    {tuit.liked ? <FaHeart className="red-heart" onClick={() =>
+                        dispatch(updateTuitThunk({...tuit, likes: tuit.likes + 1}))
+                    }/> : <FaRegHeart onClick={() =>
+                        dispatch(updateTuitThunk({...tuit, likes: tuit.likes + 1, liked: true}))
+                    }/>} {tuit.likes}
+                </div>
+            </div>
+            <div className="col-3">
+                {/*Todo: Try to make this block prettier*/}
+                <div>
+                    {tuit.disliked ? <AiFillDislike className="thumbs-down" onClick={() =>
+                        dispatch(updateTuitThunk({...tuit, dislikes: tuit.dislikes + 1}))
+                    }/> : <AiOutlineDislike onClick={() =>
+                        dispatch(updateTuitThunk({...tuit, dislikes: tuit.dislikes + 1, disliked: true}))
+                    }/>} {tuit.dislikes}
+                </div>
+            </div>
+            <div className="col-2">
+                <div><FaUpload/></div>
+            </div>
+        </div>
+    );
+}
 export default TuitStats;

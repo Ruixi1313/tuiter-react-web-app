@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import {deleteTuit} from "../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../services/tuits-thunks";
 import TuitStats from "./tuit-stats";
 import {BsPatchCheckFill} from 'react-icons/bs';
 
@@ -25,7 +25,7 @@ picks up the Curiosity rover on its 6' bed`,
 
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
+    dispatch(deleteTuitThunk(id));
   }
 
   return (
