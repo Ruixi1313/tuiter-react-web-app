@@ -1,42 +1,48 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import {deleteTuit} from "../reducers/tuits-reducer";
-import {FaTimesCircle} from "react-icons/fa";
-import { AiFillCheckCircle } from 'react-icons/ai';
-import TuitsStat from "./tuits-stat";
+import TuitStats from "./tuit-stats";
+import { useDispatch } from "react-redux";
 import {deleteTuitThunk} from "../services/tuits-thunks";
 
-const TuitsItem = (
-    { tuit
-    }
-   ) => {
-    const dispatch = useDispatch();
-const deleteTuitHandler = (id) => {
-  dispatch(deleteTuitThunk(id));
-}
-    return(
-     <li className="list-group-item">
-      <div className="row align-items-center">
-        <div className="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-2 col-xxl-2">
-          <img width={70} className="float-end rounded-circle" src={`/images/${tuit.image}`}/>
+function TuitItem({ tuit }) {
+  const dispatch = useDispatch();
+  const deleteTuitHandler = (id) => {
+    dispatch(deleteTuitThunk(id));
+  };
+
+  return (
+    <li className="list-group-item">
+      <div className="row">
+        <div className="col-1">
+          <img
+            src={tuit.image}
+            alt="profile"
+            className="rounded-circle"
+            height="48px"
+            width="48px"
+          />
         </div>
-        <div className="col-8 col-sm-8 col-md-8 col-lg-11 col-xl-10 col-xxl-10">
-          <div>
-            <FaTimesCircle className="text-secondary float-end"
-              onClick={() => deleteTuitHandler(tuit._id)} />
-            <strong>{tuit.username}</strong> <span class="fa fa-check-circle"></span> <AiFillCheckCircle style={{ color: 'blue'}} />  {tuit.handle} . {tuit.time}
-          </div>
-          <div className="text-wrap text-black mb-1">
-            {tuit.tuit}
-          </div>
-        </div>
-        <div>
-        <TuitsStat tuit={tuit}/>
-        {/* <TuitsStat /> */}
+
+        <div className="col-11 ">
+              <span className="fw-bold">{tuit.userName}</span>&nbsp;
+              <i className="bi bi-patch-check-fill text-primary"></i>&nbsp;
+              <span className="text-secondary">
+                {tuit.handle}  <i className="bi bi-dot"></i> {tuit.time}
+              </span>
+              <i className="bi bi-x-lg float-end" onClick={() => deleteTuitHandler(tuit._id)}></i>
+            <div>{tuit.tuit}</div>
+            <div style={{ marginTop: "18px" }}>
+            <TuitStats 
+            
+              liked={tuit.liked}
+              comments={tuit.replies}
+              retweets={tuit.retuits}
+              likes={tuit.likes}
+            />
+            </div>
         </div>
       </div>
-     </li>
-    );
-   };
+    </li>
+  );
+}
 
-   export default TuitsItem;
+export default TuitItem;

@@ -4,15 +4,15 @@ import NavigationSidebar from "./tuiter/navigation-sidebar";
 import HomeScreen from "./tuiter/home-screen/home-screen";
 import ExploreScreen from "./tuiter/explore-screen/explore-screen";
 import BookmarksScreen from "./tuiter/bookmarks-screen";
-import ProfileScreen from "./tuiter/user/profile-screen";
+import ProfileScreen from "./tuiter/user/profile";
 import WhoToFollowList from "./tuiter/who-to-follow-list";
 import {Navigate} from "react-router-dom";
 import whoReducer from "./tuiter/reducers/who-reducer";
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
 import tuitsReducer from "./tuiter/reducers/tuits-reducer";
-import LoginScreen from "./tuiter/user/login-screen";
-import RegisterScreen from "./tuiter/user/register-screen";
+import LoginScreen from "./tuiter/user/login";
+import RegisterScreen from "./tuiter/user/register";
 import authReducer from "./tuiter/reducers/auth-reducer";
 
 const store = configureStore({
