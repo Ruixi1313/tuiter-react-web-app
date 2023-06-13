@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import TuitItem from "./TuitItem";
+import TuitItem from "./tuit-item";
 import {useSelector, useDispatch } from "react-redux";
 import {findTuitsThunk} from "../services/tuits-thunk";
 const TuitList = () => {

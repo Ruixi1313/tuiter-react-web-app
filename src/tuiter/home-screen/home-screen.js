@@ -1,4 +1,4 @@
-import TuitList from "../tuits-list/TuitList";
+import TuitList from "../tuits-list/tuit-list";
 import WhatHappening from "../whats-happening";
 import { Provider } from "react-redux";
 import { configureStore } from '@reduxjs/toolkit';
