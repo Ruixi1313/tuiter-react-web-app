@@ -1,33 +1,32 @@
 import axios from "axios";
-
-const SERVER_API_URL = "https://tuiter-node-server-app5.onrender.com/api"
+const SERVER_API_URL = process.env.REACT_APP_API_BASE;
 const USERS_URL = `${SERVER_API_URL}/users`;
-
-console.log(USERS_URL);
-const api = axios.create({ withCredentials: true });
-
+const api = axios.create({ baseURL: USERS_URL,withCredentials: true });
 
 export const login = async ({ username, password }) => {
- const response = await api.post(`${USERS_URL}/login`, { username, password });
- const user = response.data;
- return user;
+    const response = await api.post(`${USERS_URL}/login`, { username, password });
+    const user = response.data;
+    return user;
 };
 
 export const logout = async () => {
     const response = await api.post(`${USERS_URL}/logout`);
     return response.data;
-   };
+};
+
 export const profile = async () => {
     const response = await api.post(`${USERS_URL}/profile`);
     return response.data;
-   };
-export const updateUser = async (user) => {
-    const response = await api.put(`${USERS_URL}/${user._id}`, user);
+};
+
+export const updateUser = async (uid,user) => {
+    const response = await api.put(`${USERS_URL}/${uid}`,user);
     return response.data;
-   };
-export const register = async ({ username, password }) => {
-    const response = await api.post(`${USERS_URL}/register`, { username, password });
+};
+
+export const register = async ({ username, password, lastName,firstName}) => {
+    const response = await api.post(`${USERS_URL}/register`, { username,password,lastName,firstName});
     const user = response.data;
-    console.log(user);
     return user;
+
 };
