@@ -1,5 +1,5 @@
 import React from "react";
-import TuitSummaryList from "../tuit-summary-list";
+import TuitSummaryList from "../tuit-summary-list/tuit-summary-list";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GoGear } from "react-icons/go";
 function ExploreScreen() {
